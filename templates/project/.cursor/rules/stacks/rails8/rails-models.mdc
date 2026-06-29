@@ -1,0 +1,13 @@
+---
+description: Rails model conventions
+globs: app/models/**
+alwaysApply: false
+---
+
+# Rails models
+
+Read `docs/standards/stacks/rails8/technical-guideline.md` §3 for full detail.
+
+- Balanced ActiveRecord: associations, validations, scopes, lightweight entity logic
+- No multi-step orchestration or external provider calls
+- No `default_scope` — use named scopes

@@ -102,10 +102,12 @@ These thoughts mean STOP—you're rationalizing:
 
 When multiple skills could apply, use this order:
 
-1. **Process skills first** (brainstorming, systematic-debugging) - these determine HOW to approach the task
-2. **Implementation skills second** (frontend-design, mcp-builder) - these guide execution
+1. **Project bootstrap first** (`using-project-standards`) — when `docs/TECH_STACK.md` or `docs/PROJECT_STACK.md` is missing and the user wants to build or scaffold
+2. **Process skills second** (brainstorming, systematic-debugging) — these determine HOW to approach the task
+3. **Implementation skills third** (frontend-design, mcp-builder) — these guide execution
 
-"Let's build X" → brainstorming first, then implementation skills.
+"Let's build X" in a repo without stack files → `using-project-standards` first, then brainstorming, then implementation skills.
+"Let's build X" with stack files ready → brainstorming first, then implementation skills.
 "Fix this bug" → systematic-debugging first, then domain-specific skills.
 
 ## Skill Types

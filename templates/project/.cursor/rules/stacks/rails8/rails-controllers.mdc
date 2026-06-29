@@ -1,0 +1,13 @@
+---
+description: Rails controller conventions
+globs: app/controllers/**
+alwaysApply: false
+---
+
+# Rails controllers
+
+Read `docs/standards/stacks/rails8/technical-guideline.md` §3 for full detail.
+
+- Thin: `params.expect`, `authorize`, delegate to service, render/redirect
+- No business logic, no provider SDK calls
+- No `permit!` / unfiltered mass assignment

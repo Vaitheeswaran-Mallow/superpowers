@@ -1,0 +1,13 @@
+---
+description: Rails service object conventions
+globs: app/services/**
+alwaysApply: false
+---
+
+# Rails services
+
+Read `docs/standards/stacks/rails8/technical-guideline.md` §3 for full detail.
+
+- One use case per service object; open transaction boundary here
+- Context namespacing when architecture mode is `ddd` (e.g. `Billing::RecordUsage`)
+- Delegate domain logic to models/aggregates; no HTTP or rendering concerns

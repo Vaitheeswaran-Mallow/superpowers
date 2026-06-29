@@ -1,0 +1,11 @@
+---
+description: Testing baseline for this project
+globs: "**/*{spec,test}*"
+alwaysApply: false
+---
+
+# Testing
+
+Read `docs/TECH_STACK.md` for the verify command.
+Tests must cover behavior changed in the current task.
+Do not claim done without running the verify command from TECH_STACK.
