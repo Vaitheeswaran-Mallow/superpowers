@@ -22,6 +22,10 @@ Assume they are a skilled developer, but know almost nothing about our toolset o
 
 If the spec covers multiple independent subsystems, it should have been broken into sub-project specs during brainstorming. If it wasn't, suggest breaking this into separate plans — one per subsystem. Each plan should produce working, testable software on its own.
 
+## Project standards
+
+If `docs/TECH_STACK.md` exists in the target repo, read it and `docs/PROJECT_STACK.md` before writing tasks. Follow [stack-placement.md](references/stack-placement.md). When `architecture mode: ddd`, insert [DDD applicability](references/ddd-applicability-template.md) before tasks; each task tags Context, Profile, Entities when DDD is on.
+
 ## File Structure
 
 Before defining tasks, map out which files will be created or modified and what each one is responsible for. This is where decomposition decisions get locked in.

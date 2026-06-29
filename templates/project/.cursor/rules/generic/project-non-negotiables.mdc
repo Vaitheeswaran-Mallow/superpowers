@@ -1,0 +1,14 @@
+---
+description: Core project norms — read stack files before coding
+alwaysApply: true
+---
+
+# Project non-negotiables
+
+Read `docs/PROJECT_STACK.md` for product and entity context.
+Read `docs/TECH_STACK.md` for stack and architecture mode.
+For full engineering detail: `docs/standards/stacks/<stack>/`
+
+- No secrets in source; use env or credentials store.
+- Authorization and validation at boundaries — never rely on UI hiding alone.
+- Fix design spec and plan before code when behavior intent changes.

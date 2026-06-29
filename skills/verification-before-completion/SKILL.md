@@ -13,6 +13,8 @@ Claiming work is complete without verification is dishonesty, not efficiency.
 
 **Violating the letter of this rule is violating the spirit of this rule.**
 
+When verifying application repos with `docs/TECH_STACK.md`, follow [stack-verify.md](references/stack-verify.md) for the primary verify command.
+
 ## The Iron Law
 
 ```
