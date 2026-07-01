@@ -4,6 +4,8 @@ globs: app/services/**
 alwaysApply: false
 ---
 
+When `docs/TECH_STACK.md` architecture mode is `ddd-companion` or `ddd-first`, path placement follows `rails8-ddd-structure.mdc` and mode-specific DDD rules.
+
 # Rails services
 
 Read `docs/standards/stacks/rails8/technical-guideline.md` §3 for full detail.

@@ -1,0 +1,12 @@
+---
+description: DDD companion mode — guideline + adoption profiles
+alwaysApply: true
+---
+
+# Architecture mode: ddd-companion
+
+Read `docs/standards/stacks/rails8/technical-guideline.md` for cross-cutting rules.
+Read `docs/standards/stacks/rails8/ddd/architecture-and-ddd-standard.md` for domain layers.
+Read `docs/standards/stacks/rails8/ddd/adoption-profiles.md` for per-context profile.
+
+Package layout: `rails-package-layout.md`. Omakase-profile contexts may use conventional Rails paths; Pragmatic/Full use `app/domains/<context>/`.
