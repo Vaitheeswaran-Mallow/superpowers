@@ -25,7 +25,7 @@ none
 <!-- ddd-first: Profile or Depth = thin | moderate | deep -->
 
 ## Context map
-<!-- only when architecture mode: ddd -->
+<!-- only when architecture mode: ddd-companion or ddd-first -->
 
 ## Enabled add-ons
 
