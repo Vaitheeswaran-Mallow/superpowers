@@ -38,4 +38,10 @@ test -f skills/using-project-standards/references/ddd-bootstrap-scaffold.md || f
 ls templates/project/.cursor/rules/stacks/rails8/rails8-ddd-*.mdc 2>/dev/null | grep -q . || fail "ddd cursor rules"
 grep -q 'ddd-companion' skills/using-project-standards/SKILL.md || fail "three modes in skill"
 
+# mode-standards-copy: explicit file lists (not entire ddd/ folder)
+grep 'ddd-first' skills/using-project-standards/references/mode-standards-copy.md | grep -q 'ddd-first-reference.md' || fail "ddd-first lists ddd-first-reference.md"
+grep 'ddd-first' skills/using-project-standards/references/mode-standards-copy.md | grep -q 'rails-package-layout.md' || fail "ddd-first lists rails-package-layout.md"
+grep 'ddd-first' skills/using-project-standards/references/mode-standards-copy.md | grep -q 'technical-guideline' && fail "ddd-first must not copy technical-guideline"
+grep -qE 'entire [`]?ddd/' skills/using-project-standards/references/mode-standards-copy.md && fail "mode-standards-copy must not say entire ddd/"
+
 echo "PASS: project-standards structure"

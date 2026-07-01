@@ -21,13 +21,20 @@ touch "app/domains/${CONTEXT}/application/.keep"
 touch "app/domains/${CONTEXT}/infrastructure/adapters/.keep"
 touch "app/domains/${CONTEXT}/interface/.keep"
 mkdir -p docs/contexts
-cp templates/project/docs/contexts/_template.md "docs/contexts/${CONTEXT}.md"  # from fork paths when in app repo, use fork template at bootstrap
+cp "<fork>/templates/project/docs/contexts/_template.md" "docs/contexts/${CONTEXT}.md"
 ```
+
+`<fork>` = superpowers plugin/fork root on disk (same source used for standards and rules copy).
 
 ## Zeitwerk
 
-If `config/initializers/zeitwerk.rb` missing, copy from `templates/project/config/initializers/zeitwerk.rb`.
+If `config/initializers/zeitwerk.rb` missing, copy from `<fork>/templates/project/config/initializers/zeitwerk.rb`.
 
 ## Glossary
 
-Edit each `docs/contexts/<context>.md` — replace placeholder title with context name.
+For each bounded context, create `docs/contexts/<context>.md`:
+
+1. **Preferred:** copy from `<fork>/templates/project/docs/contexts/_template.md` (see command above).
+2. **Fallback:** if the fork path is unavailable in the app repo, create the file with the same section headings as that template (Overview, Terms, Aggregates, Published events, Relationships).
+
+Replace the `# <Context name>` placeholder with the actual context name.

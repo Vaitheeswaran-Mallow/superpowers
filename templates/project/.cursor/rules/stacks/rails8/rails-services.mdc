@@ -11,5 +11,5 @@ When `docs/TECH_STACK.md` architecture mode is `ddd-companion` or `ddd-first`, p
 Read `docs/standards/stacks/rails8/technical-guideline.md` §3 for full detail.
 
 - One use case per service object; open transaction boundary here
-- Context namespacing when architecture mode is `ddd` (e.g. `Billing::RecordUsage`)
+- Context namespacing when architecture mode is `ddd-companion` or `ddd-first` (e.g. `Billing::RecordUsage`)
 - Delegate domain logic to models/aggregates; no HTTP or rendering concerns

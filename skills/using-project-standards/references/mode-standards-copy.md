@@ -7,7 +7,7 @@ Read `docs/TECH_STACK.md` **Architecture mode**. Normalize legacy `ddd` → `ddd
 | Mode | Copy |
 |------|------|
 | `none` | `technical-guideline.md` only |
-| `ddd-companion` | `technical-guideline.md` + entire `ddd/` folder from fork |
+| `ddd-companion` | `technical-guideline.md` + `ddd/architecture-and-ddd-standard.md` + `ddd/adoption-profiles.md` + `ddd/rails-package-layout.md` |
 | `ddd-first` | `ddd/ddd-first-reference.md` + `ddd/rails-package-layout.md` only |
 
 ## Cursor rules (into app `.cursor/rules/`)
