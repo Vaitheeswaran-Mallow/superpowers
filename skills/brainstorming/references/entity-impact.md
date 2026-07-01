@@ -23,5 +23,5 @@ When `docs/PROJECT_STACK.md` exists, read it before design approval.
 ## Risks
 - Cross-module writes
 
-4. If architecture mode is `ddd`, add **Contexts involved** listing bounded contexts touched
+4. If architecture mode is `ddd-companion` or `ddd-first`, add **Contexts involved** and optional **Package paths** (`app/domains/<context>/…`) per rails-package-layout.md
 5. New entities → update `docs/PROJECT_STACK.md` catalog before implementation

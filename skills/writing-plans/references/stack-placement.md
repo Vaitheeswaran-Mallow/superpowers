@@ -1,6 +1,6 @@
 # Stack placement in plans
 
-Read `docs/TECH_STACK.md` for stack value and `docs/PROJECT_STACK.md` for entities.
+Read `docs/TECH_STACK.md` for stack and architecture mode; `docs/PROJECT_STACK.md` for entities.
 
 ## Every plan includes
 
@@ -8,14 +8,23 @@ Read `docs/TECH_STACK.md` for stack value and `docs/PROJECT_STACK.md` for entiti
 ## Stack placement
 
 **Stack:** <from TECH_STACK>
-**Reference:** docs/standards/stacks/<stack>/
+**Architecture mode:** <none | ddd-companion | ddd-first>
+**Reference:** docs/standards/stacks/<stack>/ (+ ddd/ when DDD mode on)
+**Layout:** docs/standards/stacks/rails8/ddd/rails-package-layout.md (when DDD on)
 ```
 
-## rails8 (architecture mode: none)
+## rails8 — architecture mode: none
 
-- Controllers thin → services → models per technical-guideline §3
+- Conventional Rails: thin controllers → services → models per technical-guideline §3
 - Each task tags: **Module**, **Entities**, **Files**
 
-## architecture mode: ddd
+## rails8 — architecture mode: ddd-companion
 
-Also read [ddd-applicability-template.md](ddd-applicability-template.md) and add that section before tasks.
+- Package layout for Pragmatic/Full contexts: `app/domains/<context>/…`
+- Read adoption-profiles for profile per context
+- Add [ddd-applicability-template.md](ddd-applicability-template.md) before tasks
+
+## rails8 — architecture mode: ddd-first
+
+- Every context uses full package; read ddd-first-reference.md
+- Add ddd-applicability section; use **Depth** not Profile
