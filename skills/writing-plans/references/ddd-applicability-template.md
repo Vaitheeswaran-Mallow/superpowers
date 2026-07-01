@@ -1,40 +1,40 @@
-# DDD applicability (insert before tasks when architecture mode: ddd)
-
-Copy this section into the plan. Link to reference docs — do not paste full standards.
+# DDD applicability (insert before tasks when architecture mode is ddd-companion or ddd-first)
 
 ```markdown
 ## DDD applicability (this feature)
 
-**Reference docs** (read on demand — do not duplicate in this plan):
-- docs/standards/stacks/<stack>/ddd/adoption-profiles.md
-- docs/standards/stacks/<stack>/ddd/ddd-first-reference.md
+**Architecture mode:** <ddd-companion | ddd-first>
+
+**Reference docs** (read on demand):
+- docs/standards/stacks/rails8/ddd/rails-package-layout.md
+- ddd-companion: architecture-and-ddd-standard.md, adoption-profiles.md, technical-guideline.md
+- ddd-first: ddd-first-reference.md
 
 **Contexts touched**
 
-| Context | Subdomain | Profile | Layers used this feature |
-|---------|-----------|---------|--------------------------|
-| Billing | Core | Pragmatic | L0+L1: aggregate, domain events, outbox |
+| Context | Subdomain | Profile/Depth | Layers this feature |
+|---------|-----------|---------------|---------------------|
+| Billing | Core | Pragmatic | L1: aggregate, outbox |
 
-**Placement rules (from profile)**
+**Placement (package-first)**
 
-| Profile | This plan uses |
-|---------|----------------|
-| Pragmatic | app/services/billing/, AR aggregate, outbox |
+| Context | Application | Domain | Infrastructure | Interface |
+|---------|-------------|--------|----------------|-----------|
+| Billing | record_usage.rb | invoice.rb | adapters/stripe_adapter.rb | invoices_controller.rb |
+
+Paths relative to `app/domains/billing/`.
 
 **Boundaries**
-- No cross-context table writes; read via published query/ACL
+- No cross-context table writes; ACL/events only
 
-**Out of scope for DDD this feature**
-- L2 repositories, L4 event sourcing (not in profile)
+**Out of scope**
+- L2, L4 (unless profile/depth requires)
 ```
 
-## Per-task tags (when DDD on)
+## Per-task requirements
 
-Each task includes:
-- **Context:** e.g. Billing
-- **Profile:** e.g. Pragmatic
-- **Entities:** e.g. Bill (create), Customer (read via Accounts ACL)
-- **Pattern:** e.g. application service → aggregate → outbox
-- **Reference:** adoption-profiles.md (profile row)
+Each task MUST include **Files** with full paths, e.g.:
+- `app/domains/billing/application/record_usage.rb` (Application)
+- `app/domains/billing/domain/invoice.rb` (Domain)
 
-Target: 30–80 lines for the applicability section total.
+Also tag: **Context**, **Profile or Depth**, **Entities**, **Pattern**

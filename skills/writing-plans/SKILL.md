@@ -24,7 +24,7 @@ If the spec covers multiple independent subsystems, it should have been broken i
 
 ## Project standards
 
-If `docs/TECH_STACK.md` exists in the target repo, read it and `docs/PROJECT_STACK.md` before writing tasks. Follow [stack-placement.md](references/stack-placement.md). When `architecture mode: ddd`, insert [DDD applicability](references/ddd-applicability-template.md) before tasks; each task tags Context, Profile, Entities when DDD is on.
+If `docs/TECH_STACK.md` exists in the target repo, read it and `docs/PROJECT_STACK.md` before writing tasks. Follow [stack-placement.md](references/stack-placement.md). When architecture mode is `ddd-companion` or `ddd-first`, insert [DDD applicability](references/ddd-applicability-template.md) before tasks; each task tags Context, Profile or Depth, Entities, and **Files** with package paths.
 
 ## File Structure
 

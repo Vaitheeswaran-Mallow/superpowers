@@ -2,7 +2,7 @@
 
 **Read this first.** This is the third candidate structure for adopting DDD. Where the **Architecture & DDD Standard** offers layers *à la carte* (maximum flexibility, more decisions) and the **DDD-First Edition** imposes one mandatory architecture (maximum consistency, higher floor), **Adoption Profiles trade fine-grained choice for low decision-cost**: a team picks a named preset and gets a coherent, pre-reasoned bundle — without deciding each layer from scratch.
 
-**Relationship to the substrate.** Profiles are **presets over the layer model** (L0–L4) and constructs defined in the **Architecture & DDD Standard v1.0**, with cross-cutting rules from the **Rails 8 Technical Guideline v1.4**. This document defines the **presets and how to select them** — not the layer mechanics. For *how* the outbox, upcasting, crypto-shredding, repositories, or fitness tests actually work, see the substrate; this document says *which* of them a given profile turns on.
+**Relationship to the substrate.** Profiles are **presets over the layer model** (L0–L4) defined in **`architecture-and-ddd-standard.md`** (in this folder), with cross-cutting rules from the **Rails 8 Technical Guideline v1.4**. On-disk layout: **`rails-package-layout.md`** in this folder.
 
 **Decoupling preserved.** Selecting a profile never forces event sourcing or CQRS. Even the heaviest profile keeps **L4 (event sourcing) and L3 (CQRS) opt-in per context and independent of each other** — a "Full DDD" project event-sources only the contexts with a concrete driver.
 
@@ -33,7 +33,7 @@
 ### Pragmatic DDD
 **Intent:** most of DDD's structural value at low cost — the recommended default for non-trivial products. **When:** core subdomains of typical complexity and supporting contexts with real logic.
 
-- **Structure:** **L0 strategic** (bounded contexts, ubiquitous language, context map, ownership) + **L1 tactical on ActiveRecord** (aggregates with behaviour, value objects, domain services, domain events via the transactional outbox, process managers where workflows span aggregates).
+- **Structure:** **L0 strategic** (bounded contexts, ubiquitous language, context map, ownership) + **L1 tactical on ActiveRecord** (aggregates with behaviour, value objects, domain services, domain events via the transactional outbox, process managers where workflows span aggregates). Package layout per `rails-package-layout.md` (`app/domains/<context>/…`).
 - **Layers:** L0 + L1 **baseline**. **L3 (CQRS)** adopted **per context where read and write shapes diverge**. **L2 (repositories)** and **L4 (event sourcing)** by **exception only**, each with an ADR and a driver.
 - **Events:** outbox + idempotent consumers standard.
 - **Cost:** medium. **Best risk/reward** for most teams.

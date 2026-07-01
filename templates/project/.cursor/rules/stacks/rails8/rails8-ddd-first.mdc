@@ -1,0 +1,12 @@
+---
+description: DDD-first mode — four-layer spine, all contexts packaged
+alwaysApply: true
+---
+
+# Architecture mode: ddd-first
+
+Read `docs/standards/stacks/rails8/ddd/ddd-first-reference.md` (primary standard).
+Read `docs/standards/stacks/rails8/ddd/rails-package-layout.md` for paths.
+
+Every bounded context uses full package: domain/, application/, infrastructure/, interface/.
+No omakase flat models for context-owned entities. Tactical depth varies; folder layout does not.

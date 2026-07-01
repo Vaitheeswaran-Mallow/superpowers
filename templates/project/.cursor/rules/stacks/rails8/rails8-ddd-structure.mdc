@@ -1,0 +1,29 @@
+---
+description: DDD package-first layout for bounded contexts
+globs: app/domains/**
+alwaysApply: false
+---
+
+# DDD package structure
+
+Read `docs/TECH_STACK.md` architecture mode and `docs/standards/stacks/rails8/ddd/rails-package-layout.md`.
+
+## Layout (mandatory when DDD mode on)
+
+```
+app/domains/<context>/
+  domain/           # aggregates, value objects → Billing::Invoice
+  application/      # use cases, sagas, jobs → Billing::RecordUsage
+  infrastructure/   # adapters/, repositories/, read_models/
+  interface/        # controllers, presenters → Billing::InvoicesController
+```
+
+- Context name = lowercase folder + Ruby module (`billing` → `Billing::`)
+- No flat `app/models/<entity>.rb` for context-owned entities
+- No provider SDK outside `infrastructure/adapters/`
+- Interface delegates to application → domain only
+
+## Docs
+
+- Glossary per context: `docs/contexts/<context>.md`
+- Bounded contexts table: `docs/PROJECT_STACK.md`

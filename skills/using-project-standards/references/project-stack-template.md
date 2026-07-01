@@ -16,13 +16,16 @@ none
 | | | |
 
 ## Bounded contexts
-<!-- only when architecture mode: ddd -->
+<!-- when architecture mode: ddd-companion or ddd-first -->
 
-| Context | Subdomain | Owner | Profile | Overrides | ADR |
-|---------|-----------|-------|---------|-----------|-----|
+| Context | Subdomain | Owner | Profile or Depth | Overrides | ADR |
+|---------|-----------|-------|------------------|-----------|-----|
+
+<!-- ddd-companion: Profile = Omakase | Pragmatic | Full DDD -->
+<!-- ddd-first: Profile or Depth = thin | moderate | deep -->
 
 ## Context map
-<!-- only when architecture mode: ddd -->
+<!-- only when architecture mode: ddd-companion or ddd-first -->
 
 ## Enabled add-ons
 
