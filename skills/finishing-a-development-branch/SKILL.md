@@ -35,7 +35,7 @@ Cannot proceed with merge/PR until tests pass.
 
 Stop. Don't proceed to Step 2.
 
-**If tests pass:** Continue to Step 2.
+**If tests pass:** Run `stack-drift-check` skill. Once drift check completes (or passes silently), continue to Step 2.
 
 ### Step 2: Detect Environment
 
