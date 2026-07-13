@@ -5,6 +5,8 @@ description: Use when starting work in a project, scaffolding a new MVP, or when
 
 # Using Project Standards
 
+> **Deprecated.** This skill has been replaced by `project-stack-setup`, which generates stack documents through targeted questions rather than template copy. Use `project-stack-setup` for all new projects. `using-project-standards` is kept here for reference only and will not be updated.
+
 ## Overview
 
 Bootstrap `TECH_STACK.md`, `PROJECT_STACK.md`, Cursor rules, and stack reference docs. Hard gate before feature work.
