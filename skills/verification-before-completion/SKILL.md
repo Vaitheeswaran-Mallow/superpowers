@@ -28,6 +28,8 @@ If you haven't run the verification command in this message, you cannot claim it
 ```
 BEFORE claiming any status or expressing satisfaction:
 
+0. STACK DRIFT: If docs/TECH_STACK.md exists, run stack-drift-check skill first.
+   Resolve any drift before proceeding. Skip silently if no drift.
 1. IDENTIFY: What command proves this claim?
 2. RUN: Execute the FULL command (fresh, complete)
 3. READ: Full output, check exit code, count failures
