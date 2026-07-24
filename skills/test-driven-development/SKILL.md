@@ -68,6 +68,34 @@ digraph tdd_cycle {
 }
 ```
 
+### Capture Baseline — Before Anything Else
+
+**Run the full test suite once before writing any code or test.**
+
+```bash
+npm test 2>&1 | grep -E "FAIL|PASS|✓|✗|×|●" | head -50
+```
+
+If any tests are already failing, **stop and surface them to the developer before writing any new test.** Show the list and ask for a plan:
+
+```
+Pre-existing failures found before starting this cycle:
+  - <test name> — <failure message>
+  - …
+
+How should we handle these?
+  A) Fix them now as part of this task
+  B) Defer — I'll open a follow-up ticket and skip them this cycle
+  C) Ignore — they are known/acceptable failures
+```
+
+Wait for the developer's answer. Use their decision as input:
+- **A (fix now):** Fix first, re-run baseline until clean, then start the TDD cycle.
+- **B (defer):** Note the ticket reference; treat those tests as out of scope for this cycle only.
+- **C (ignore):** Note them; treat as out of scope for this cycle only.
+
+Do not silently skip pre-existing failures without this check.
+
 ### RED - Write Failing Test
 
 Write one minimal test showing what should happen.
@@ -180,7 +208,9 @@ Confirm:
 
 **Test fails?** Fix code, not test.
 
-**Other tests fail?** Fix now.
+**Other tests fail?** Check your baseline first.
+- **Pre-existing** (was already failing before this cycle): skip it, log it as `[PRE-EXISTING — out of scope]`, and move on. Do NOT fix it.
+- **Newly broken** (was passing before, your change broke it): fix it. **Hard limit: 3 attempts.** If still failing after 3 attempts, STOP. Report to your human partner with the exact failure and what you tried. Wait for their decision — they may fix it, mark it pre-existing, or abort the cycle.
 
 ### REFACTOR - Clean Up
 
